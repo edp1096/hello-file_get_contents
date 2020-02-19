@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <script>
+        function getImg() {
+            let xhr = new XMLHttpRequest()
+            let uri = "http://localhost:10080/img.php";
+
+            xhr.onload = function () {
+                if (xhr.status === 200 || xhr.status === 201) {
+                    // console.log(xhr.responseText)
+                    let cavity = document.getElementById("img-cavity")
+                    cavity.src = xhr.responseText
+                } else {
+                    console.error(xhr.responseText)
+                }
+            }
+            xhr.open('GET', uri, true)
+            xhr.send(null)
+        }
+
+        function getFile() {
+            let xhr = new XMLHttpRequest()
+            let uri = "http://localhost:10080/file.php";
+
+            xhr.onload = function () {
+                if (xhr.status === 200 || xhr.status === 201) {
+                    // console.log(xhr.responseText)
+                    // cavity.innerHTML = btoa(unescape(encodeURIComponent(xhr.responseText)))
+                    let cavity = document.getElementById("file-cavity")
+                    cavity.innerHTML = xhr.responseText
+                } else {
+                    console.error(xhr.responseText)
+                }
+            }
+            xhr.open('GET', uri, true)
+            xhr.send(null)
+        }
+    </script>
+</head>
+
+<body>
+    <button onClick="getImg()">Show img</button>
+    <button onClick="getFile()">Show File</button>
+    
+    <hr />
+
+    <img id="img-cavity" />
+    <pre id="file-cavity"></pre>
+</body>
+
+</html>
