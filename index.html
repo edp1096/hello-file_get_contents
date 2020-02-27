@@ -2,9 +2,11 @@
 
 <head>
     <script>
+        let targetDomain = "http://localhost"
+
         function getImg() {
             let xhr = new XMLHttpRequest()
-            let uri = "http://localhost:10080/img.php";
+            let uri = targetDomain + "/img.php"
 
             xhr.onload = function () {
                 if (xhr.status === 200 || xhr.status === 201) {
@@ -21,7 +23,7 @@
 
         function getFile() {
             let xhr = new XMLHttpRequest()
-            let uri = "http://localhost:10080/file.php";
+            let uri = targetDomain + "/file.php";
 
             xhr.onload = function () {
                 if (xhr.status === 200 || xhr.status === 201) {
@@ -42,7 +44,7 @@
 <body>
     <button onClick="getImg()">Show img</button>
     <button onClick="getFile()">Show File</button>
-    
+
     <hr />
 
     <img id="img-cavity" />

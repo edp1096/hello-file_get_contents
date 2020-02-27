@@ -1,6 +1,5 @@
 <?php
 $url = "http://dn-m.talk.kakao.com/talkm/oXyPxYU5SR/O1OWwrkSKfCkzit9B8psLK/i_ko0fnh.png";
-// $url = "http://dn-m.talk.kakao.com/talkm/oXAsjY7EZh/RovsK8h6jfdmBKAZPwKWg1/i_lrek6p.jpg";
 $fileType = pathinfo($url, PATHINFO_EXTENSION);
 
 $options = array(
